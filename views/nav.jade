@@ -1,0 +1,25 @@
+nav.navbar.navbar-default.navbar-static-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/hyorder-36a01/us-central1/widgets/') App Name
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li(class=(title == 'Home') ? 'active' : null)
+          a(href='/hyorder-36a01/us-central1/widgets/home') Home
+        li(class=(title == 'Product') ? 'active' : null)
+          a(href='/hyorder-36a01/us-central1/widgets/product/admin') Product
+        li(class=(title == 'maps') ? 'active' : null)
+          a(href='/hyorder-36a01/us-central1/widgets/maps') Maps
+      ul.nav.navbar-nav.navbar-right
+        if isLoggedin
+          li
+            a(href='/hyorder-36a01/us-central1/widgets/login/logout') Logout
+        else
+          li(class=(title == 'Log in') ? 'active' : null)
+            a(href='/hyorder-36a01/us-central1/widgets/') Log-in
+    // /.nav-collapse

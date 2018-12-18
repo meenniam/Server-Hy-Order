@@ -1,0 +1,49 @@
+doctype
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    link(rel="stylesheet", href="/cbsmartlife-ca1e5/us-central1/widgets/css/style.css")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    title
+  body
+    include ./nav.jade
+    if isLoggedin
+      div.container
+        h1 product
+        br
+        button.btn.btn-success(type="button",onclick="myFunc()") Upload
+        div(id="divUpload")
+          input(type="file")
+        table.table.table-hover
+          thead
+            tr
+              th image
+              th Name
+              th price
+              th action
+          tbody
+            each item in data
+              tr
+                td
+                  img(style="width:50px;height:50px",src="#{item.image}")
+                td #{item.name}
+                td #{item.price}
+                td
+                  button.btn.btn-primary(type="submit",onclick="update(#{item.id})") update
+                  &nbsp;
+                  button.btn.btn-danger(type="submit") delete
+    else
+      h1 Please Login
+    script.
+      function myFunc() {
+        var x = document.createElement("INPUT");
+        x.setAttribute("type", "file");
+        document.getElementById('divUpload').appendChild(x);
+      }
+      
+      function update(val){
+        console.log(val);
+      }
+          

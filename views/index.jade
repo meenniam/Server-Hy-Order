@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+  head
+    link(rel="stylesheet", href="/cbsmartlife-ca1e5/us-central1/widgets/css/style.css")
+    link(rel="stylesheet", href="https://www.w3schools.com/w3css/4/w3.css")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    title Jade
+  body.bgclr
+    include ./nav.jade
+    div.container
+      div.container.w3-card(style="width:50%;height:200px")
+        form(method="post",action="/hyorder-36a01/us-central1/widgets/login/admin")
+          div.form-group
+            label(for='email') email
+            input.form-control(type='text', name='username' placeholder='holder')
+          div.form-group
+            label(for='password') password
+            input.form-control(type='password', name='password' placeholder='holder')
+          button.w3-button.w3-green.w3-ripple(type="submit",style="width:100%" ) submit
+      hr
